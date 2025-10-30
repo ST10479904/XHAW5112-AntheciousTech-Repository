@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif; /* match homepage font */
+      line-height: 1.6;
+      background-color: #f8f1e4; 
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #b36b00; 
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-left img {
+      /* Here is the styling for the logo image in the navigation bar */
+      width: 60px; /* match homepage */
+      height: auto;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold; /* match homepage */
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover { color: #f1c27d; }
+
+    /* Main Content */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 { color: #6b3e1a; margin-bottom: 15px; }
+    p { margin-bottom: 25px; text-align: justify; }
+    img { display: block; margin: 20px auto; max-width: 100%; height: auto; border-radius: 10px; }
+
+    /* The styling for the buttons go here */
+    .btn {
+      display: inline-block;
+      padding: 14px 35px;
+      background: linear-gradient(90deg, #b36b00 0%, #e09337 100%);
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      margin: 10px;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #804600 0%, #b36b00 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    .btn-secondary {
+      background: #6b3e1a;
+    }
+
+    .btn-secondary:hover {
+      background: #553217;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav { flex-direction: column; align-items: flex-start; }
+      nav ul { flex-direction: column; gap: 10px; width: 100%; padding-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-left">
+      <a href="home.html"><img src="Images/logo.png" alt="Logo"></a>
+    </div>
+
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+      <li><a href="details.html">Details</a></li>
+      <li><a href="check.html">Check</a></li>
+    </ul>
+  </nav>
+
+  <!-- The main content goes here -->
+  <div class="container">
+    
+    <h1>History</h1>
+    <!--The first heading goes here -->
+    <p>
+      <!--The first paragraph goes here-->
+      Empowering the Nation began as a simple but powerful belief: when one grows, the whole community arises.
+      We first began as a small group of volunteers offering basic life skills through workshops. Our goal was clear:
+      equip individuals with practical knowledge that could help families, neighbours, and the nation itself.
+    </p>
+    <p>
+      <!--The second paragraph goes here-->
+      As word spread, our movement grew. We started with Gardening and First Aid, which evolved into full courses.
+      Each new spring is shaped by real needs, real stories, and real people.
+    </p>
+    <p>
+      <!--The third paragraph goes here-->
+      We didn't just grow in size, but also in soul. Empowering the Nation became a digital home for those who wanted
+      more than just skills, but connection, purpose, and a chance to give back. Today, Empowering the Nation stands
+      as a learning community where every course is a step towards collective upliftment.
+    </p>
+
+    <h2>Vision</h2>
+    <!--The second heading goes here-->
+    <p>
+      <!--The first paragraph under the second heading comes here-->
+      To create a culture of self-empowerment where each student gains skills, confidence, and community support
+      to uplift themselves — and in doing so, uplift the nation.
+    </p>
+
+    <h3>Mission</h3>
+    <!--The third heading is located here-->
+    <img src="Images/mission.png" alt="Mission Image">
+    <p>
+      Empowering the Nation provides accessible, practical, and emotionally grounded learning experiences that equip
+      students with life-changing skills. Through inclusive courses, community-driven support, and great service,
+      we help our students grow not just for themselves but for the greater good.
+    </p>
+
+    <div style="text-align: center; margin: 30px 0;">
+      <!--The button to lead the user to the courses page is found here -->
+      <button class="btn" onclick="window.location.href='courses.html'">Go to Courses</button>
+      <a href="home.html" class="btn btn-secondary">Back to Home</a>
+    </div>
+  </div>
+
+</body>
+</html>

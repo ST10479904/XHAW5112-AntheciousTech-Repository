@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fdf5e6;
+      color: #333;
+    }
+
+    header {
+      background-color: #b66d00;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;          /* remove bullet points */
+      margin: 0;                 /* reset default margin */
+      padding: 0;                /* reset default padding */
+      display: flex;             /* lay out items horizontally */
+      gap: 20px;                 /* spacing between links */
+      align-items: center;       /* vertically align items within nav */
+    }
+
+    nav ul li {
+      margin: 0;                 /* ensure no extra margin on list items */
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f1c27d;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 20px;
+    }
+
+    .contact-info, .contact-form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-info h2, .contact-form h2 {
+      margin-top: 0;
+      color: #b66d00;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      background-color: #b66d00;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .contact-form button:hover {
+      background-color: #994d00;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      margin-top: 40px;
+    }
+
+    @media(max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+   <a href="home.html">
+     <img src="Images/logo.png"  alt="Logo">
+   </a>
+
+   <nav>
+     <ul>
+       <li><a href="home.html">Home</a></li>
+       <li><a href="aboutus.html">About Us</a></li>
+       <li><a href="courses.html">Courses</a></li>
+       <li><a href="contactus.html">Contact Us</a></li>
+       <li><a href="details.html">Details</a></li>
+       <li><a href="check.html">Check</a></li>
+     </ul>
+   </nav>
+</header>
+
+<main>
+  <div class="contact-info">
+    <h2>Get In Touch</h2>
+    <p>Our Location:<br>
+       123 Education Street<br>
+       Skillville, SV 12345<br>
+       South Africa</p>
+    <p>Phone Number:<br>
+       +27 12 345 6789<br>
+       +27 87 654 3210</p>
+    <p>Email Address:<br>
+       <a href="mailto:info@empoweringnation.org">info@empoweringnation.org</a><br>
+       <a href="mailto:support@empoweringnation.org">support@empoweringnation.org</a></p>
+    <p>Office Hours:<br>
+       Monday - Friday: 8:00 AM - 5:00 PM<br>
+       Saturday: 9:00 AM - 1:00 PM<br>
+       Sunday: Closed</p>
+    <p>
+      <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+    </p>
+  </div>
+
+  <div class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number">
+      <input type="text" name="subject" placeholder="What is this regarding?">
+      <textarea name="message" rows="5" placeholder="How can we help you?" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="successMessage" style="color:green; display:none;">Message sent successfully!</p>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 Empowering Nation. All Rights Reserved.
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('successMessage').style.display = 'block';
+    this.reset();
+  });
+</script>
+
+<!-- FontAwesome icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<section class="contact-maps" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+  <div class="map-container" style="flex: 1 1 300px; max-width: 600px;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114694.70955007822!2d27.97523669468849!3d-26.05940316598876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e957398cbf40517%3A0xdf8bd21bf1eb74c!2sSandton!5e0!3m2!1sen!2sza!4v1761845964655!5m2!1sen!2sza"
+      width="100%"
+      height="350"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <div class="map-container" style="flex: 1 1 300px; max-width: 600px;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.1854179692823!2d28.04826047570175!3d-26.09286537714535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95733c0d0ca99f%3A0x4ccc0847a5c3aa56!2sBenmore%20Rd%2C%20Sandton%2C%202196!5e0!3m2!1sen!2sza!4v1761846770492!5m2!1sen!2sza"
+      width="100%"
+      height="350"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <div class="map-container" style="flex: 1 1 300px; max-width: 600px;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.1515843421016!2d28.1334187756987!3d-25.995851377205526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956f2376062117%3A0xdd46ed9923d41f3c!2sMidrand%20Gautrain%20Station%20Drivers%20License%20Renewal%20Centre!5e0!3m2!1sen!2sza!4v1761846808863!5m2!1sen!2sza"
+      width="100%"
+      height="350"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+
+
+
+</body>
+</html>
