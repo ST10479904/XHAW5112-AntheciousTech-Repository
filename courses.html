@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses</title>
+<!--The main link that all the web pages share to have the same style-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+
+  body {
+    background-color: #f8f1e4;     /* The background colour is found here */ 
+    color: #333;
+    min-height: 100vh;
+  }
+
+  nav {
+    background-color: #b36b00;     /* The navigation bar background colour lies here */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+  }
+  nav .logo-container img { width: 48px; height: 48px; }   /* The container for the logo image is found here */
+  nav ul { list-style: none; display: flex; gap: 20px; }
+  nav ul li a {
+    text-decoration: none; color: white; font-weight: bold; padding: 5px 10px;   
+  }
+  nav ul li a:hover, nav ul li a.active { color: #f0e5d6; }
+
+  .section-title {
+    text-align: center;
+    font-size: 2em;
+    color: #b36b00;
+    margin: 40px 0 20px;
+  }
+
+  .courses-container {    /*  The style for the courses container lies here */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 15px;
+  }
+
+  .course-card {      /* Style for the courses' card lies here */
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+  .course-card:hover { transform: translateY(-5px); }     
+
+  .course-card img {    /* Style for the course-card image lies here */
+    width: 100%;
+    max-width: 280px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .course-card h3 {
+    color: #b36b00;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .course-card p { line-height: 1.5; margin-bottom: 10px; text-align: center; }
+  .course-card ul { list-style: none; padding: 0; margin-bottom: 10px; }
+  .course-card ul li { margin-bottom: 6px; color: #333; }
+  .course-card ul li i { color: #b36b00; margin-right: 10px; }
+
+  .course-button {
+    display: inline-block;
+    padding: 10px 22px;
+    background-color: #b36b00;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .course-button:hover { background-color: #804600; }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #b36b00;
+    color: #fff;
+  }
+
+  @media(max-width:768px){
+    nav { flex-direction: column; }
+    nav ul { margin-top:10px; justify-content:center; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="home.html" class="logo-container"><img src="Images/logo.png" alt="Logo"></a>
+  <!--The logo lies here on the navigation bar-->
+  <ul>
+    <!--These are the main links on the navigation bar-->
+    <li><a href="home.html">Home</a></li>
+    <li><a href="aboutus.html">About Us</a></li>
+    <li><a href="courses.html" class="active">Courses</a></li>
+    <li><a href="contactus.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<h2 class="section-title">Short Courses</h2>
+<div class="courses-container">
+  <!-- Sewing course is found here-->
+  <div class="course-card">
+    <img src="Images/sewing.png" alt="Sewing Course">
+    <h3>Sewing Training</h3>
+    <p>Learn the basics of sewing and create garments, accessories, and home decor.</p>
+    <ul>
+      <li><i class="fas fa-scissors"></i> Machine & hand stitching</li>
+      <li><i class="fas fa-file-alt"></i> Pattern reading</li>
+      <li><i class="fas fa-tshirt"></i> Garment construction</li>
+    </ul>
+    <p><strong>Duration:</strong> 2 months</p>
+    <p><strong>Cost:</strong> R1500</p>
+    <a href="enroll.html" class="course-button">Enroll Now</a>
+  </div>
+
+  <!-- Gardening course is found here -->
+  <div class="course-card">
+    <img src="Images/garden.png" alt="Gardening Course">
+    <h3>Gardening Training</h3>
+    <p>Learn essentials of gardening and create a thriving outdoor space.</p>
+    <ul>
+      <li><i class="fas fa-seedling"></i> Soil & nutrition</li>
+      <li><i class="fas fa-tree"></i> Plant selection</li>
+      <li><i class="fas fa-tint"></i> Watering & irrigation</li>
+      <li><i class="fas fa-bug"></i> Pest management</li>
+    </ul>
+    <p><strong>Duration:</strong> 4 weeks</p>
+    <p><strong>Cost:</strong> R750</p>
+    <a href="enroll.html" class="course-button">Enroll Now</a>
+  </div>
+
+  <!-- Cooking course is found here -->
+  <div class="course-card">
+    <img src="Images/cooking.png" alt="Cooking Course">
+    <h3>Cooking Training</h3>
+    <p>Learn fundamentals of cooking, meal planning, and healthy nutrition.</p>
+    <ul>
+      <li><i class="fas fa-utensils"></i> Kitchen safety</li>
+      <li><i class="fas fa-shopping-basket"></i> Meal planning</li>
+      <li><i class="fas fa-fire"></i> Cooking techniques</li>
+      <li><i class="fas fa-apple-alt"></i> Healthy eating</li>
+    </ul>
+    <p><strong>Duration:</strong> 6 weeks</p>
+    <p><strong>Cost:</strong> R750</p>
+    <a href="enroll.html" class="course-button">Enroll Now</a>
+  </div>
+
+  <!-- Child Minding course is found here -->
+  <div class="course-card">
+    <img src="Images/child.png" alt="Child Minding Course">
+    <h3>Child Minding Training</h3>
+    <p>Learn essential skills to care for children safely and effectively.</p>
+    <ul>
+      <li><i class="fas fa-baby"></i> Safe supervision</li>
+      <li><i class="fas fa-heart"></i> Emotional & social development</li>
+      <li><i class="fas fa-brain"></i> Growth & learning stages</li>
+      <li><i class="fas fa-hands-helping"></i> Parent communication</li>
+    </ul>
+    <p><strong>Duration:</strong> 3 weeks</p>
+    <p><strong>Cost:</strong> R1200</p>
+    <a href="enroll.html" class="course-button">Enroll Now</a>
+  </div>
+</div>
+
+<h2 class="section-title">Long Courses</h2>
+<div class="courses-container" style="background-color:#f2e9db; padding:30px; border-radius:15px;">
+  <!-- Landscaping course is found here -->
+  <div class="course-card">
+    <img src="Images/landscapping.png" alt="Landscaping Course">
+    <h3>Landscaping Training</h3>
+    <p>Create stunning outdoor spaces using design principles and sustainable practices.</p>
+    <ul>
+      <li><i class="fas fa-seedling"></i> Site & design planning</li>
+      <li><i class="fas fa-tree"></i> Plant selection</li>
+      <li><i class="fas fa-water"></i> Hardscape integration</li>
+      <li><i class="fas fa-leaf"></i> Sustainable landscaping</li>
+    </ul>
+    <p><strong>Duration:</strong> 3 months</p>
+    <p><strong>Cost:</strong> R1500</p>
+    <a href="enroll.html" class="course-button">Enroll Now</a>
+  </div>
+
+  <!-- First Aid course is found here -->
+  <div class="course-card">
+    <img src="Images/firstaid.png" alt="First Aid Course">
+    <h3>First Aid Training</h3>
+    <p>Equip yourself with essential emergency skills including CPR and wound care.</p>
+    <ul>
+      <li><i class="fas fa-hand-holding-medical"></i> Wound care</li>
+      <li><i class="fas fa-heartbeat"></i> CPR</li>
+      <li><i class="fas fa-lungs"></i> Choking response</li>
+      <li><i class="fas fa-fire-extinguisher"></i> Burn treatment</li>
+    </ul>
+    <p><strong>Duration:</strong> 4 weeks</p>
+    <p><strong>Cost:</strong> R1500</p>
+    <a href="enroll.html" class="course-button">Enroll Now</a>
+  </div>
+
+  <!-- Life Skills course is found here -->
+  <div class="course-card">
+    <img src="Images/lifeskills.png" alt="Life Skills Course">
+    <h3>Life Skills Training</h3>
+    <p>Develop essential skills to handle challenges, communicate, and make decisions.</p>
+    <ul>
+      <li><i class="fas fa-brain"></i> Emotional regulation</li>
+      <li><i class="fas fa-comments"></i> Communication skills</li>
+      <li><i class="fas fa-shield-alt"></i> Stress management</li>
+      <li><i class="fas fa-bullseye"></i> Goal-setting & decision-making</li>
+    </ul>
+    <p><strong>Duration:</strong> 4 weeks</p>
+    <p><strong>Cost:</strong> R1500</p>
+    <a href="enroll.html" class="course-button">Enroll Now</a>
+  </div>
+</div>
+<!--This is where the footer lies-->
+<footer>
+  &copy; 2025 Empowering the Nation. All rights reserved.
+</footer>
+
+</body>
+</html>

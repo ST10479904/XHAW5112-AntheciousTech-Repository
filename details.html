@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Enroll & Course Fee Calculator</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f8f1e4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* NAVIGATION BAR */
+  header {
+    width: 100%;
+    background-color: #b36b00; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+
+  nav .logo img {
+    width: 48px;
+    height: auto;
+    display: block;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* CONTAINER */
+  .container {
+    background: #fff8f0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #b36b00;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #b36b00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background: #804600;
+  }
+
+  .message {
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .course-fieldset, .contact-fieldset {
+    border: 1px solid #b36b00;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .course-fieldset legend,
+  .contact-fieldset legend {
+    font-weight: bold;
+  }
+
+  #quote-output {
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .quotation-box {
+    margin-top: 20px;
+    border: 2px dashed #b36b00;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff3e0;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <a href="home.html"><img src="images/logo.png" alt="Logo"></a>
+    </div>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+      <li><a href="details.html">Details</a></li>
+      <li><a href="check.html">Check</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container" id="auth-container">
+  <h2 id="form-title">Sign Up</h2>
+  <div class="message" id="auth-message"></div>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button id="submitBtn">Sign Up</button>
+  <div class="link" id="toggleLink">
+    Already have an account? <span id="toggleForm">Login</span>
+  </div>
+</div>
+
+<div class="container hidden" id="calculator-container">
+  <h2>Course Fee Calculator & Enrollment</h2>
+
+  <form id="fee-form">
+    <fieldset class="contact-fieldset">
+      <legend>Your Contact Details</legend>
+      <input type="text" id="contact-name" placeholder="Your Name" required>
+      <input type="tel" id="contact-phone" placeholder="Phone Number" required>
+      <input type="email" id="contact-email" placeholder="Email Address" required>
+    </fieldset>
+
+    <fieldset class="course-fieldset">
+      <legend>Select Courses</legend>
+      <label><input type="checkbox" name="course" data-price="1500"> First Aid (R 1500)</label><br>
+      <label><input type="checkbox" name="course" data-price="1500"> Sewing (R 1500)</label><br>
+      <label><input type="checkbox" name="course" data-price="1500"> Landscaping (R 1500)</label><br>
+      <label><input type="checkbox" name="course" data-price="1500"> Life Skills (R 1500)</label><br>
+      <label><input type="checkbox" name="course" data-price="750"> Child Minding (R 750)</label><br>
+      <label><input type="checkbox" name="course" data-price="750"> Cooking (R 750)</label><br>
+      <label><input type="checkbox" name="course" data-price="750"> Garden Maintenance (R 750)</label>
+    </fieldset>
+
+    <button type="button" id="calculate-btn">Calculate Fee</button>
+    <button type="button" id="quotation-btn">Get Quotation</button>
+
+    <div id="quote-output">
+      <h3>Quoted Total Fee:</h3>
+      <p>R <span id="total-price-value">0.00</span></p>
+      <p>(Includes 15% VAT)</p>
+      <p id="discount-info"></p>
+    </div>
+
+    <div id="quotation-box" class="quotation-box hidden">
+      <h3>Quotation Summary:</h3>
+      <p id="quote-customer"></p>
+      <p id="quote-courses"></p>
+      <p id="quote-total"></p>
+    </div>
+
+    <button type="submit" id="enrollBtn">Request Consultant / Enroll</button>
+  </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const authContainer = document.getElementById('auth-container');
+  const calculatorContainer = document.getElementById('calculator-container');
+  const formTitle = document.getElementById('form-title');
+  const submitBtn = document.getElementById('submitBtn');
+  const toggleForm = document.getElementById('toggleForm');
+  const authMessage = document.getElementById('auth-message');
+  const quotationBtn = document.getElementById('quotation-btn');
+  const quoteBox = document.getElementById('quotation-box');
+
+  let isLogin = false;
+  const loggedUser = localStorage.getItem('loggedInUser');
+  if (loggedUser) showCalculator();
+
+  toggleForm.addEventListener('click', () => {
+    isLogin = !isLogin;
+    formTitle.textContent = isLogin ? 'Login' : 'Sign Up';
+    submitBtn.textContent = isLogin ? 'Login' : 'Sign Up';
+    toggleForm.textContent = isLogin ? 'Sign Up' : 'Login';
+    authMessage.textContent = '';
+  });
+
+  submitBtn.addEventListener('click', () => {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    if (!username || !password) {
+      authMessage.style.color = 'red';
+      authMessage.textContent = 'Please fill in all fields.';
+      return;
+    }
+    let users = JSON.parse(localStorage.getItem('users') || '{}');
+    if (isLogin) {
+      if (users[username] && users[username] === password) {
+        localStorage.setItem('loggedInUser', username);
+        showCalculator();
+      } else {
+        authMessage.style.color = 'red';
+        authMessage.textContent = 'Invalid username or password.';
+      }
+    } else {
+      if (users[username]) {
+        authMessage.style.color = 'red';
+        authMessage.textContent = 'Username already exists.';
+      } else {
+        users[username] = password;
+        localStorage.setItem('users', JSON.stringify(users));
+        authMessage.style.color = 'green';
+        authMessage.textContent = 'Sign up successful! Please log in.';
+        setTimeout(() => {
+          isLogin = true;
+          formTitle.textContent = 'Login';
+          submitBtn.textContent = 'Login';
+          toggleForm.textContent = 'Sign Up';
+          authMessage.textContent = '';
+        }, 1500);
+      }
+    }
+  });
+
+  function showCalculator() {
+    authContainer.classList.add('hidden');
+    calculatorContainer.classList.remove('hidden');
+    setupCalculatorLogic();
+  }
+
+  function setupCalculatorLogic() {
+    const calculateBtn = document.getElementById('calculate-btn');
+    const courseCheckboxes = calculatorContainer.querySelectorAll('input[name="course"]');
+    const totalSpan = document.getElementById('total-price-value');
+    const discountInfo = document.getElementById('discount-info');
+    const enrollForm = document.getElementById('fee-form');
+
+    function calculateTotalFee() {
+      let subtotal = 0;
+      let selectedCount = 0;
+      let selectedCourses = [];
+
+      courseCheckboxes.forEach(cb => {
+        if (cb.checked) {
+          subtotal += parseFloat(cb.dataset.price);
+          selectedCount++;
+          selectedCourses.push(cb.parentNode.textContent.trim());
+        }
+      });
+
+      let discountRate = 0;
+      if (selectedCount === 2) discountRate = 0.05;
+      else if (selectedCount === 3) discountRate = 0.10;
+      else if (selectedCount > 3) discountRate = 0.15;
+
+      const discount = subtotal * discountRate;
+      const discountedSubtotal = subtotal - discount;
+      const VAT_RATE = 0.15;
+      const vat = discountedSubtotal * VAT_RATE;
+      const total = discountedSubtotal + vat;
+
+      totalSpan.textContent = total.toFixed(2);
+      discountInfo.textContent = discountRate > 0 
+        ? `Discount applied: ${(discountRate*100).toFixed(0)}%`
+        : 'No discount applied.';
+
+      return {selectedCourses, total};
+    }
+
+    calculateBtn.addEventListener('click', calculateTotalFee);
+
+    quotationBtn.addEventListener('click', () => {
+      const customerName = document.getElementById('contact-name').value.trim();
+      const customerEmail = document.getElementById('contact-email').value.trim();
+      if(!customerName || !customerEmail){
+        alert("Please fill in your contact details first.");
+        return;
+      }
+      const {selectedCourses, total} = calculateTotalFee();
+      if(selectedCourses.length === 0){
+        alert("Please select at least one course.");
+        return;
+      }
+
+      quoteBox.classList.remove('hidden');
+      document.getElementById('quote-customer').textContent = `Name: ${customerName} | Email: ${customerEmail}`;
+      document.getElementById('quote-courses').textContent = `Courses: ${selectedCourses.join(', ')}`;
+      document.getElementById('quote-total').textContent = `Total Quote: R ${total.toFixed(2)} (VAT included)`;
+      quoteBox.scrollIntoView({behavior: 'smooth'});
+    });
+
+    enrollForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const {selectedCourses, total} = calculateTotalFee();
+      if(selectedCourses.length === 0){
+        alert("Please select at least one course.");
+        return;
+      }
+      alert(`Thank you, ${document.getElementById('contact-name').value}! Your enrollment request has been recorded. We will contact you at ${document.getElementById('contact-email').value}.`);
+      window.location.href = 'check.html';
+    });
+  }
+});
+</script>
+</body>
+</html>

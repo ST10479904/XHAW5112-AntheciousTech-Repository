@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landscaping Training</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+
+  body {
+    background-color: #f8f1e4; /* matches other pages */
+    color: #333;
+    min-height: 100vh;
+  }
+
+  /* NAVIGATION */
+  nav {
+    background-color: #b36b00; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+  }
+  nav .logo-container img {
+    width: 48px;
+    height: 48px; /* consistent with other pages */
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+  }
+  nav ul li a:hover, nav ul li a.active {
+    color: #f0e5d6;
+  }
+
+  /* CONTENT CARD */
+  .container {
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 40px auto;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  }
+
+  h1 {
+    text-align: center;
+    color: #b36b00;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+
+  .course-details-section {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .course-main-image {
+    width: 350px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  .course-details-content {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .course-details-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  .course-details-content h3 {
+    color: #b36b00;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .course-details-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  .course-details-content ul li {
+    margin-bottom: 8px;
+    color: #333;
+  }
+  .course-details-content ul li i {
+    color: #b36b00;
+    margin-right: 10px;
+  }
+
+  .course-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #b36b00;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  .course-button:hover {
+    background-color: #804600;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #b36b00;
+    color: #fff;
+    margin-top: 30px;
+  }
+
+  @media(max-width:768px){
+    .course-details-section { flex-direction: column; align-items:center; }
+    .course-main-image, .course-details-content { width: 100%; }
+    nav { flex-direction: column; }
+    nav ul { margin-top: 10px; justify-content: center; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="home.html" class="logo-container"><img src="Images/logo.png" alt="Logo"></a>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="aboutus.html">About Us</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="contactus.html">Contact Us</a></li>
+    <li><a href="details.html">Details</a></li>
+    <li><a href="check.html">Check</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1>Landscaping Training</h1>
+  <div class="course-details-section">
+    <img src="Images/landscapping.png" alt="Landscaping Course" class="course-main-image">
+    <div class="course-details-content">
+      <p>Learn the art and science of landscape design and discover how to create stunning outdoor spaces that balance beauty and function. This course covers design principles, hardscape and softscape planning, and sustainable practices.</p>
+      <h3>What you'll learn:</h3>
+      <ul>
+        <li><i class="fas fa-seedling"></i> Site analysis and design planning</li>
+        <li><i class="fas fa-tree"></i> Plant selection and placement</li>
+        <li><i class="fas fa-water"></i> Hardscape and water feature integration</li>
+        <li><i class="fas fa-leaf"></i> Sustainable landscaping practices</li>
+      </ul>
+      <p><strong>Duration:</strong> 3 months</p>
+      <p><strong>Format:</strong> Online</p>
+      <p><strong>Cost:</strong> R1500</p>
+      <a href="enroll.html" class="course-button">Enroll Now</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Empowering the Nation. All rights reserved.
+</footer>
+
+</body>
+</html>
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up / Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f1e4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff8f0;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #b36b00;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #b36b00;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #804600;
+    }
+    .message {
+      text-align: center;
+      color: red;
+      margin-bottom: 10px;
+    }
+    .link {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+    .link span {
+      color: #b36b00;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="auth-container">
+    <h2 id="form-title">Sign Up</h2>
+    <div class="message" id="message"></div>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="submitBtn">Sign Up</button>
+    <div class="link" id="toggleLink">
+      Already have an account? <span id="toggleForm">Login</span>
+    </div>
+  </div>
+
+  <div class="container" id="welcome-container" style="display:none;">
+    <h2>Welcome, <span id="user-display"></span>!</h2>
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+<script>
+  const authContainer = document.getElementById('auth-container');
+  const welcomeContainer = document.getElementById('welcome-container');
+  const formTitle = document.getElementById('form-title');
+  const submitBtn = document.getElementById('submitBtn');
+  const toggleForm = document.getElementById('toggleForm');
+  const messageDiv = document.getElementById('message');
+  const userDisplay = document.getElementById('user-display');
+  const logoutBtn = document.getElementById('logoutBtn');
+
+  let isLogin = false; // false = sign up, true = login
+
+  // Check if user is already logged in
+  if(localStorage.getItem('loggedInUser')){
+    showWelcome(localStorage.getItem('loggedInUser'));
+  }
+
+  toggleForm.addEventListener('click', () => {
+    isLogin = !isLogin;
+    formTitle.textContent = isLogin ? 'Login' : 'Sign Up';
+    submitBtn.textContent = isLogin ? 'Login' : 'Sign Up';
+    toggleForm.textContent = isLogin ? 'Sign Up' : 'Login';
+    messageDiv.textContent = '';
+  });
+
+  submitBtn.addEventListener('click', () => {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if(!username || !password){
+      messageDiv.textContent = 'Please fill in all fields.';
+      return;
+    }
+
+    let users = JSON.parse(localStorage.getItem('users') || '{}');
+
+    if(isLogin){
+      // LOGIN
+      if(users[username] && users[username] === password){
+        localStorage.setItem('loggedInUser', username);
+        showWelcome(username);
+      } else {
+        messageDiv.textContent = 'Invalid username or password.';
+      }
+    } else {
+      // SIGN UP
+      if(users[username]){
+        messageDiv.textContent = 'Username already exists.';
+      } else {
+        users[username] = password;
+        localStorage.setItem('users', JSON.stringify(users));
+        messageDiv.style.color = 'green';
+        messageDiv.textContent = 'Sign up successful! You can now log in.';
+        setTimeout(() => {
+          isLogin = true;
+          formTitle.textContent = 'Login';
+          submitBtn.textContent = 'Login';
+          toggleForm.textContent = 'Sign Up';
+          messageDiv.textContent = '';
+        }, 1500);
+      }
+    }
+  });
+
+  logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('loggedInUser');
+    authContainer.style.display = 'block';
+    welcomeContainer.style.display = 'none';
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+  });
+
+  function showWelcome(username){
+    authContainer.style.display = 'none';
+    welcomeContainer.style.display = 'block';
+    userDisplay.textContent = username;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* header.css */
+
+/* Header + Navigation Bar */
+header {
+  background-color: #b36b00; /* Accent color */
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* subtle depth */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Logo styling */
+nav img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  /* Removed border-radius to keep logo rectangular */
+}
+
+/* Navigation links */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffd700; /* hover highlight */
+}

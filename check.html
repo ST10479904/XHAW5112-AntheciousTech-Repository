@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Form - Empowering the Nation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    background: #F0EAD6; 
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  /* NAVIGATION BAR */
+  header {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #b36b00;
+    padding: 15px 30px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  nav a.logo {
+    display: flex;
+    align-items: center;
+  }
+
+  nav a.logo img {
+    height: 48px;
+    width: 48px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* CONTAINER */
+  .container {
+    width: 100%;
+    max-width: 800px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #b36b00;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .header {
+    background: linear-gradient(90deg, #b36b00 0%, #d6984c 100%);
+    padding: 30px;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1.5px;
+  }
+
+  .header h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #f8f1e5;
+    margin-top: 10px;
+  }
+
+  /* FORM */
+  .form-container {
+    padding: 30px;
+  }
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px 20px;
+  }
+
+  .form-group {
+    flex: 1 0 300px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555555;
+  }
+
+  .input-container {
+    position: relative;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px 15px 14px 45px;
+    border: 1px solid #cccccc; 
+    border-radius: 8px;
+    background-color: #ffffff; 
+    color: #333333; 
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #b36b00;
+    box-shadow: 0 0 0 2px rgba(179, 107, 0, 0.3);
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b36b00; 
+    font-size: 18px;
+  }
+
+  .half-width {
+    flex: 1 0 calc(50% - 30px);
+  }
+
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #b36b00 0%, #e09337 100%);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .submit-btn:hover {
+    background: linear-gradient(90deg, #804600 0%, #b36b00 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .submit-btn:active {
+    transform: translateY(0);
+  }
+
+  .card-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .card-icon {
+    color: #b36b00; 
+    font-size: 24px;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #888888; 
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .half-width {
+      flex: 1 0 100%;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+    }
+
+    .header h2 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="home.html" class="logo">
+        <img src="images/logo.png" alt="Logo">
+      </a>
+      <ul>
+        <li><a href="home.html" target="_blank">Home</a></li>
+        <li><a href="aboutus.html" target="_blank">About Us</a></li>
+        <li><a href="courses.html" target="_blank">Courses</a></li>
+        <li><a href="contactus.html" target="_blank">Contact Us</a></li>
+        <li><a href="details.html" target="_blank">Details</a></li>
+        <li><a href="check.html" target="_blank">Check</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="header">
+      <h1>EMPOWERING THE NATION</h1>
+      <h2>Payment</h2>
+    </div>
+
+    <div class="form-container">
+      <form id="payment-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">First and Last Name</label>
+            <div class="input-container">
+              <i class="input-icon fas fa-user"></i>
+              <input type="text" id="name" placeholder="Card Holder" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <div class="input-container">
+              <i class="input-icon fas fa-envelope"></i>
+              <input type="email" id="email" placeholder="your.email@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <div class="input-container">
+              <i class="input-icon fas fa-phone"></i>
+              <input type="tel" id="phone" placeholder="+1 (234) 567-8900" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <div class="input-container">
+              <i class="input-icon fas fa-credit-card"></i>
+              <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="expiry">Expiry Date</label>
+            <div class="input-container">
+              <i class="input-icon fas fa-calendar-alt"></i>
+              <input type="text" id="expiry" placeholder="MM/YY" required>
+            </div>
+          </div>
+
+          <div class="form-group half-width">
+            <label for="cvv">CCV</label>
+            <div class="input-container">
+              <i class="input-icon fas fa-lock"></i>
+              <input type="text" id="cvv" placeholder="123" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-icons">
+          <i class="card-icon fab fa-cc-visa"></i>
+          <i class="card-icon fab fa-cc-mastercard"></i>
+          <i class="card-icon fab fa-cc-amex"></i>
+          <i class="card-icon fab fa-cc-discover"></i>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-lock"></i> Submit Payment
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Empowering The Nation. All rights reserved.</p>
+  </div>
+
+  <script>
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Payment submitted successfully!');
+      this.reset();
+    });
+
+    // Format card number input
+    document.getElementById('card-number').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '').substring(0, 16);
+      value = value.replace(/(\d{4})/g, '$1 ').trim();
+      e.target.value = value;
+    });
+
+    // Format expiry date input
+    document.getElementById('expiry').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '').substring(0, 4);
+      if (value.length > 2) {
+        value = value.replace(/(\d{2})(\d+)/, '$1/$2');
+      }
+      e.target.value = value;
+    });
+  </script>
+</body>
+</html>
