@@ -3,219 +3,322 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  
+
+    
+  
+
+
+  <title>Contact Us - Empowering the Nation Through Skills</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    body {
+    body, h1, h2, h3, h4, p, ul {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fdf5e6;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    header {
-      background-color: #b66d00;
+    body {
+      background-color: #f8f1e4;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: #b36b00;
+      color: white;
       padding: 15px 30px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      color: white;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    header img {
-      height: 50px;
+    nav .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: white;
+      text-align: left;
     }
 
     nav ul {
-      list-style: none;          /* remove bullet points */
-      margin: 0;                 /* reset default margin */
-      padding: 0;                /* reset default padding */
-      display: flex;             /* lay out items horizontally */
-      gap: 20px;                 /* spacing between links */
-      align-items: center;       /* vertically align items within nav */
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    nav ul li {
-      margin: 0;                 /* ensure no extra margin on list items */
-      padding: 0;
-    }
-
-    nav a {
+    nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
     }
 
-    nav a:hover {
-      color: #f1c27d;
+    nav ul li a:hover {
+      text-decoration: underline;
     }
 
-    main {
+    /* CONTENT */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .contact-container {
       display: flex;
       flex-wrap: wrap;
-      padding: 40px 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-      gap: 20px;
+      gap: 30px;
     }
 
     .contact-info, .contact-form {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
       flex: 1;
       min-width: 300px;
     }
 
-    .contact-info h2, .contact-form h2 {
-      margin-top: 0;
-      color: #b66d00;
+
+    
+
+  
+
+
+    .info-card {
+      background-color: #fff8f0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
     }
 
-    .contact-form input, .contact-form textarea {
+    .info-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .info-icon i {
+      font-size: 1.5em;
+      color: #b36b00;
+    }
+
+    .social-links {
+      margin-top: 15px;
+    }
+
+    .social-icon {
+      margin-right: 10px;
+      font-size: 1.2em;
+      color: #b36b00;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      color: #804600;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .form-control {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 6px;
+      background-color: #fff;
     }
 
-    .contact-form button {
-      background-color: #b66d00;
+    .submit-btn, .back-btn {
+      background-color: #b36b00;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-weight: bold;
       cursor: pointer;
-      font-size: 16px;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
     }
 
-    .contact-form button:hover {
-      background-color: #994d00;
+    .submit-btn:hover, .back-btn:hover {
+      background-color: #804600;
+    }
+
+    .map-container {
+      margin-top: 40px;
+      border-radius: 10px;
+      overflow: hidden;
+
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: #eee;
+
+
+      background-color: #b36b00;
+      color: white;
       margin-top: 40px;
+      border-radius: 0 0 10px 10px;
     }
 
-    @media(max-width: 768px) {
-      main {
+    @media (max-width: 700px) {
+      nav ul {
         flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-   <a href="home.html">
-     <img src="Images/logo.png"  alt="Logo">
-   </a>
 
-   <nav>
-     <ul>
-       <li><a href="home.html">Home</a></li>
-       <li><a href="aboutus.html">About Us</a></li>
-       <li><a href="courses.html">Courses</a></li>
-       <li><a href="contactus.html">Contact Us</a></li>
-       <li><a href="details.html">Details</a></li>
-       <li><a href="check.html">Check</a></li>
-     </ul>
-   </nav>
-</header>
 
-<main>
-  <div class="contact-info">
-    <h2>Get In Touch</h2>
-    <p>Our Location:<br>
-       123 Education Street<br>
-       Skillville, SV 12345<br>
-       South Africa</p>
-    <p>Phone Number:<br>
-       +27 12 345 6789<br>
-       +27 87 654 3210</p>
-    <p>Email Address:<br>
-       <a href="mailto:info@empoweringnation.org">info@empoweringnation.org</a><br>
-       <a href="mailto:support@empoweringnation.org">support@empoweringnation.org</a></p>
-    <p>Office Hours:<br>
-       Monday - Friday: 8:00 AM - 5:00 PM<br>
-       Saturday: 9:00 AM - 1:00 PM<br>
-       Sunday: Closed</p>
-    <p>
-      <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
-    </p>
+  
+  
+
+
+
+  <nav>
+    <a href="home.html">
+      <img src="Images/logo.png" width="48" height="auto" alt="Logo">
+    </a>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+      <li><a href="details.html">Details</a></li>
+      <li><a href="check.html">Check</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>Contact Us</h1>
+      <p class="tagline">Get in touch with us to learn more about our courses and how we can help you</p>
+    </header>
+
+    <section class="contact-container">
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>Get In Touch</h3>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-content">
+              <h4>Our Location</h4>
+              <p>123 Education Street<br>Skillville, SV 12345<br>South Africa</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div class="info-content">
+              <h4>Phone Number</h4>
+              <p>+27 12 345 6789<br>+27 87 654 3210</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-content">
+              <h4>Email Address</h4>
+              <p>info@empoweringnation.org<br>support@empoweringnation.org</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div class="info-content">
+              <h4>Office Hours</h4>
+              <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/1HH6bNMWpe/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/3mpower_Nations" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/3mpowering_the_nation?igsh=bW5rcG5tcmozeHU0/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/preshi-success-b669a638a/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h3>Why Contact Us?</h3>
+          <p>We're here to answer any questions you may have about our courses, registration process, or how you can get involved in our community empowerment initiatives.</p>
+          <p>Whether you're interested in enrolling, volunteering, or partnering with us, we'd love to hear from you.</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="info-card">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="form-control" placeholder="Your Phone Number">
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" class="form-control" placeholder="What is this regarding?">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maps -->
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.400030571874!2d28.049445986877025!3d-26.183422079979745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c45163a3563%3A0x7d28761271630c9e!2sSandton%2C%202196%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1625078400000!5m2!1sen!2sus"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Map of Our Location"></iframe>
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509176!2d144.9631777153151!3d-37.8172051797512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x67a3a826d9c60e3!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1634281234567!5m2!1sen!2sau"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Our second Location"></iframe>
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7159.587071682691!2d28.005733594128184!3d-26.2033937583082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950bfdaf27767f%3A0xde19f9c4839011df!2sMayfair%2C%20Johannesburg%2C%202092!5e0!3m2!1sen!2sza!4v1760510623206!5m2!1sen!2sza"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Our third location"></iframe>
+    </div>
+
+    <!-- Back Button -->
+    <div style="text-align:center; margin-top:30px;">
+      <a href="aboutus.html" class="back-btn">Back to About Us</a>
+    </div>
   </div>
 
-  <div class="contact-form">
-    <h2>Send Us a Message</h2>
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="tel" name="phone" placeholder="Your Phone Number">
-      <input type="text" name="subject" placeholder="What is this regarding?">
-      <textarea name="message" rows="5" placeholder="How can we help you?" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p id="successMessage" style="color:green; display:none;">Message sent successfully!</p>
-  </div>
-</main>
-
-<footer>
-  &copy; 2025 Empowering Nation. All Rights Reserved.
-</footer>
-
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    document.getElementById('successMessage').style.display = 'block';
-    this.reset();
-  });
-</script>
-
-<!-- FontAwesome icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<section class="contact-maps" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-  <div class="map-container" style="flex: 1 1 300px; max-width: 600px;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114694.70955007822!2d27.97523669468849!3d-26.05940316598876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e957398cbf40517%3A0xdf8bd21bf1eb74c!2sSandton!5e0!3m2!1sen!2sza!4v1761845964655!5m2!1sen!2sza"
-      width="100%"
-      height="350"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-
-  <div class="map-container" style="flex: 1 1 300px; max-width: 600px;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.1854179692823!2d28.04826047570175!3d-26.09286537714535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95733c0d0ca99f%3A0x4ccc0847a5c3aa56!2sBenmore%20Rd%2C%20Sandton%2C%202196!5e0!3m2!1sen!2sza!4v1761846770492!5m2!1sen!2sza"
-      width="100%"
-      height="350"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-
-  <div class="map-container" style="flex: 1 1 300px; max-width: 600px;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.1515843421016!2d28.1334187756987!3d-25.995851377205526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956f2376062117%3A0xdd46ed9923d41f3c!2sMidrand%20Gautrain%20Station%20Drivers%20License%20Renewal%20Centre!5e0!3m2!1sen!2sza!4v1761846808863!5m2!1sen!2sza"
-      width="100%"
-      height="350"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
-
-
+  <footer>
+    <p>&copy; 2024 Empowering the Nation. All rights reserved.</p>
+  </footer>
 
 
 </body>
