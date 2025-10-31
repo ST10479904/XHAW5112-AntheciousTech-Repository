@@ -1,8 +1,12 @@
 # Empowering the Nation
 
-- Anthecious Tech members: Motheo Marotholi(ST10479904), Andile Masuku(ST10477470), Precious Mbabazi(ST10470248)
-- Course: Higher Certificate in Mobile Application and Web Development
-- Subject: XHAW5112
+ #### Anthecious Tech members:
+ - * Motheo Marotholi(ST10479904)
+##### - Andile Masuku(ST10477470),
+##### - Precious Mbabazi(ST10470248)
+
+#### Course: Higher Certificate in Mobile Application and Web Development
+####Subject: XHAW5112
 
 ## Links
 
@@ -104,3 +108,24 @@ Available at: https://web.dev/learn/css
 Anon., 1999. w3schools. [Online] 
 Available at: https://www.w3schools.com/css/
 [Accessed 26 September 2025].
+
+Mozilla Developer Network (MDN). 2025. HTML, CSS, and JavaScript documentation. [online]
+Available at: <https://developer.mozilla.org>
+[Accessed 31 Oct. 2025].
+
+GitHub Docs. 2025. Using Git for version control. [online] 
+Available at: <https://docs.github.com> 
+[Accessed 31 Oct. 2025].
+
+W3Schools. 2025. Web development tutorials. [online] 
+Available at: <https://www.w3schools.com> 
+[Accessed 31 Oct. 2025].
+
+Stack Overflow. 2025. Community-based troubleshooting and coding support. [online] 
+Available at: <https://stackoverflow.com> 
+[Accessed 31 Oct. 2025].
+
+
+The Independent Institute of Education. 2025. WIL Reflective Report Guidelines. [Course material].
+
+
