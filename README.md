@@ -77,3 +77,30 @@ The logo represents unity and strength, the raised fists symbolises empowerment 
 
 #### Calculations
 <img width="720" height="427" alt="Screenshot 2025-10-31 175906" src="https://github.com/user-attachments/assets/f83f9e53-ade2-46b0-a270-2d5070120a8f" />
+
+
+## References
+
+Perkins, M., Adams, C. & Obrecht, C., 2012. Canva. [Online] 
+Available at: https://share.google/9rJFxFklfULRubzuL
+[Accessed 8 September 2025].
+
+Walke, J., Chedeau, C., He, L. & Bharambe, A., 2015. React Native. [Online] 
+Available at: https://share.google/5R9399pxZ4JUq5b0B
+[Accessed 08 September 2025].
+
+Wallace, D. E., 2016. Figma. [Online] 
+Available at: https://share.google/JXwsohgEeIzgsnXoJ
+[Accessed 08 September 2025].
+
+Gates, B. & Allen, P., 1975. Microsoft Copilot. [Online] 
+Available at: https://share.google/xJTUpHrzdYQftChd1
+[Accessed 15 September 2025].
+
+Andrew, R., Spivak, A., Walton, P. & Kinlan, P., n.d. Web dev. [Online] 
+Available at: https://web.dev/learn/css
+[Accessed 26 September 2025].
+
+Anon., 1999. w3schools. [Online] 
+Available at: https://www.w3schools.com/css/
+[Accessed 26 September 2025].
