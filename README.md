@@ -1,12 +1,13 @@
 # Empowering the Nation
 
  #### Anthecious Tech members:
- - * Motheo Marotholi(ST10479904)
-##### - Andile Masuku(ST10477470),
-##### - Precious Mbabazi(ST10470248)
+* Motheo Marotholi(ST10479904)
+* Andile Masuku(ST10477470),
+* Precious Mbabazi(ST10470248)
 
 #### Course: Higher Certificate in Mobile Application and Web Development
-####Subject: XHAW5112
+
+#### Subject: XHAW5112
 
 ## Links
 
